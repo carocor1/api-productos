@@ -6,5 +6,14 @@ import { ProductosService } from './productos.service';
 @Controller('products')
 export class ProductosController {
     constructor(private service: ProductosService){}
+    @Post()
+    async createProduct (@Body() product: DeepPartial<ProductEntity>): Promise <ProductEntity> {
+        return await this.service.createProduct(product);
+    }
+
+    @Get()
+    async findAll(){
+        return await this.service.findAll()
+    }
 
 }
