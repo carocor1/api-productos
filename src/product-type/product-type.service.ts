@@ -13,7 +13,7 @@ export class ProductTypeService {
             //si se ejecuta correctamente, guarda el producto en el repositorio.
             return await this.repository.save(productType);
         } catch(error){
-            throw new HttpException('error', 500)
+            throw new HttpException('Error en la creación de un product-type', 500)
         }
     }
 
@@ -24,8 +24,7 @@ export class ProductTypeService {
                 id: param.id,
             }});
         } catch(error){
-            throw new HttpException('Error', 500)
+            throw new HttpException('Error en la búsqueda de un product-type por ID', 500)
         }
     }
-}
 }
