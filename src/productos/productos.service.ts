@@ -31,7 +31,8 @@ export class ProductosService {
         } catch (error) {
           throw new HttpException('Error al actualizar el producto', 500);
         }
-      }    async createProduct (product: DeepPartial<ProductEntity>): Promise <ProductEntity> {
+      }    
+      async createProduct (product: DeepPartial<ProductEntity>): Promise <ProductEntity> {
         try{
             return await this.repository.save(product);
         } catch(error){
